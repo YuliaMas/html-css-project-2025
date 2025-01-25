@@ -51,7 +51,6 @@ p {
 a {
     text-decoration: none;
     cursor: pointer;
-    /*color: var(--Black);*/
 }
 a:active h4:active{
     color: var(--Blue);
@@ -59,12 +58,6 @@ a:active h4:active{
 nav, header, section#category, aside , main, footer {
     width: 100%;
     padding: 0 94px;
-}
-main {
-    background: var(--White);
-}
-main>div>section {
-    height: 490px;
 }
 /*------------------ Navigation ---------------*/
 .navigation {
@@ -158,8 +151,6 @@ input[type="email"] {
     border: none;
     border-radius: 8px;
     background: var(--White, #FFFFFE);
-    /*color: var(--Grey, #C0C0C0);*/
-
     /* 20 px - Paragraph 1 */
     font-size: 20px;
     font-weight: 400;
@@ -193,7 +184,7 @@ section#category {
     align-items: center;
     gap: 50px;
 }
-section#category>ul , main ul {
+section#category>ul , main>div>section ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -203,7 +194,7 @@ section#category>ul , main ul {
     color: var(--Black);
 }
 section#category>ul>li , main ul>li {
-        text-transform: capitalize;
+    text-transform: capitalize;
 }
 section#category>ul>li:last-child, main ul>li:last-child {
     display: inline-flex;
@@ -212,16 +203,10 @@ section#category>ul>li:last-child, main ul>li:last-child {
     gap: 9px;
 }
 section#category .category-cards {
-    /*max-width: 1252px;*/
     margin: 0 auto;
-    /*height: 280px;*/
     gap: 37px;
     display: flex;
     flex-wrap: wrap;
-    /*display: grid;*/
-    /*grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));*/
-    /*grid-gap: 30px;*/
-    /*flex-wrap: wrap;*/
 }
 .category-card {
     display: flex;
@@ -233,7 +218,6 @@ section#category .category-cards {
     color: var(--Black);
     width: 220px;
     height: 280px;
-    /*height: 100%;*/
     border-radius: 8px;
     background: var(--White, #FFFFFE);
     box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
@@ -252,16 +236,95 @@ section#category .category-cards {
     color: #FFFFFE;
     box-shadow: 4px 6px 13px 0 rgba(113, 113, 113, 0.25);
 }
-    /*------------------- Aside ----------------------*/
+/*------------------- Main ----------------------*/
+main>div>section {
+    display: flex;
+    min-height: 490px;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 30px
+}
+main {
+    display: flex;
+    flex-direction: column;
+    background: var(--White);
+}
+#aboutMe {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 80px 0;
+}
+button {
+    align-self: center;
+}
+main .article-cards {
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+}
+main .artCard {
+    display: flex;
+    width: 300px;
+    height: 425px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 12px;
+    background: var(--White, #FFFFFE);
+}
+main .artCard:hover {
+    box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
+}
+main .author-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+main .article-cards h4 {
+    text-transform: capitalize;
+    padding-top: 25px;
+}
+.author-info>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+.author-info>div>p {
+    color: var(--Black, #2B2C34);
+    /* 16 px - Paragraph 3 Semi bold */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.author-info>div>p:last-child {
+    color: var(--Black, #2B2C34);
+    width: 184px;
+    height: 21px;
+    /* 14 px - Paragraph 4 */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.author-info>div span {
+    color: var(--Black);
+     font-weight: 900;
+    font-size: 20px;
+}
+/*------------------- Aside ----------------------*/
 aside {
     display: flex;
     padding: 58px 0;
-    /*padding: 58px 372px 33px;*/
     flex-direction: column;
-    /*align-items: flex-start;*/
-    /*gap: 10px;*/
-    /*justify-content: space-between;*/
-    /*justify-content: center;*/
     align-items: center;
     gap: 30px;
     min-height: 453px;
@@ -269,7 +332,6 @@ aside {
 aside p {
     color: var(--Grey, #C0C0C0);
     text-align: center;
-
     /* 20 px - Paragraph 1 */
     font-size: 20px;
     font-style: normal;
@@ -282,7 +344,6 @@ aside>div {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    /*gap: 30px;*/
     gap: 10px;
 }
 /*-------------------- Footer --------------------*/
