@@ -308,7 +308,7 @@ main .article-cards h4 {
 }
 .author-info>div span {
     color: var(--Black);
-     font-weight: 900;
+    font-weight: 900;
     font-size: 20px;
 }
 /*------------------- Aside ----------------------*/
@@ -381,5 +381,5 @@ footer p, li {
     gap: 95px;
 }
 .footer-info-card h4 {
-        text-transform: uppercase;
+    text-transform: uppercase;
 }
