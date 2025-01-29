@@ -99,7 +99,7 @@ nav {
 nav>div:nth-child(1) {
     min-height: 86px;
 }
-.logo>h2 {
+.logo h2 {
     color: var(--Dark-Blue);
     font-weight: 600;
 }
