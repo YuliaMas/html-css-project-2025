@@ -27,13 +27,14 @@ body {
     background-color:  var(--Black);
 }
 .container {
-    margin: 40px auto;
+    margin: 0 auto;
     max-width: 1440px;
-    height: 92vh;
+    height: 100vh;
     background: var(--Light-Grey-1);
     scroll-behavior: smooth;
     overflow-x: hidden ;
     scrollbar-width: none;
+    scroll-padding-top: 86px;
 }
 .flex {
     display: flex;
@@ -41,47 +42,29 @@ body {
     align-items: center;
     gap: 50px;
 }
+.wrap {
+    flex-wrap: wrap;
+}
 h1, h2, h4 {
     font-weight: 700;
     color: var(--Black);
-}
-p {
-    font-size: 20px;
-    font-weight: 400;
-}
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
-a:active h4:active{
-    color: var(--Blue);
-}
-nav, header, section#category, aside , main, footer {
-    width: 100%;
-    padding: 0 94px;
-}
-/*------------------ Navigation ---------------*/
-.navigation {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
-}
-nav {
-    background: var(--Light-Grey-1);
-    min-height: 86px;
-    flex-wrap: wrap;
 }
 h1 {
     font-size: 64px;
     width: 617px;
 }
-.logo>h2 {
-    color: var(--Dark-Blue);
-    font-weight: 600;
-}
 h2 {
     font-size: 36px;
+}
+h3 {
+    font-size: 24px;
+}
+h4, .btn_email {
+    font-size: 20px;
+}
+p {
+    font-size: 20px;
+    font-weight: 400;
 }
 span {
     color: var(--Blue);
@@ -92,11 +75,33 @@ ul {
     justify-content: space-evenly;
     gap: 50px;
 }
-h3 {
-    font-size: 24px;
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
-h4, .btn_email {
-    font-size: 20px;
+a:active h4:active{
+    color: var(--Blue);
+}
+nav, header, aside , main, footer {
+    width: 100%;
+    padding: 0 94px;
+}
+aside#category>ul>li, main ul>li, main .article-cards h4,  aside.subscribe h2 {
+    text-transform: capitalize;
+}
+/*----------------------------------- Navigation --------------------------------*/
+nav {
+    background: var(--Light-Grey-1);
+    position: sticky;
+    top: 0;
+    box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
+}
+nav>div:nth-child(1) {
+    min-height: 86px;
+}
+.logo>h2 {
+    color: var(--Dark-Blue);
+    font-weight: 600;
 }
 .search>a {
     display: flex;
@@ -116,16 +121,15 @@ h4, .btn_email {
     font-weight: 700;
     border: none;
 }
-/*------------------ Header -------------------*/
+/*----------------------------- Header -------------------------------*/
 header {
     min-height: 814px;
 }
 header>section#home {
     padding-top: 164px;
-    flex-wrap: wrap;
 }
 header>section>div>p {
-    border-left: 3px solid #2B2C34;
+    border-left: 3px solid var(--Black);
     padding-left: 9px ;
     width: 662px;
     color: var(--Dark-Grey);
@@ -152,37 +156,38 @@ input[type="email"] {
     padding: 22px 200px 22px 25px;
     border: none;
     border-radius: 8px;
-    background: var(--White, #FFFFFE);
+    background: var(--White);
 }
 input[type="email"]::placeholder {
     height: 25px;
-    color: var(--Grey, #C0C0C0);
+    color: var(--Grey);
 }
 .btn_email {
     border-radius: 8px;
     border: none;
-    background: var(--Blue, #6246EA);
+    background: var(--Blue);
     height: 67px;
     padding: 20px 23px 19px 23px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: var(--White, #FFFFFE);
+    color: var(--White);
     font-weight: 700;
     cursor: pointer;
 }
-/*------------------- Category -------------------*/
-section#category {
+/*----------------------------- Aside -- Category ---------------------------*/
+aside#category {
     min-height: 500px;
-    background: #EFF0F3;
+    background: var(--Light-Grey-1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    overflow: hidden;
 }
-section#category>ul , main>div>section ul {
+aside#category>ul , main>div>section ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -191,20 +196,18 @@ section#category>ul , main>div>section ul {
     padding: 2px 0 3px 0;
     color: var(--Black);
 }
-section#category>ul>li , main ul>li {
-    text-transform: capitalize;
-}
-section#category>ul>li:last-child, main ul>li:last-child {
+aside#category>ul>li:last-child, main ul>li:last-child {
     display: inline-flex;
     justify-content: center;
     align-items: end;
     gap: 9px;
 }
-section#category .category-cards {
+aside#category .category-cards {
     margin: 0 auto;
     gap: 37px;
     display: flex;
-    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
 }
 .category-card {
     display: flex;
@@ -214,27 +217,28 @@ section#category .category-cards {
     padding: 30px;
     gap: 30px;
     color: var(--Black);
-    width: 220px;
-    height: 280px;
     border-radius: 8px;
-    background: var(--White, #FFFFFE);
+    background: var(--White);
     box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
+    min-width: 220px;
+    min-height: 280px;
+    box-sizing: border-box;
 }
 .category-card>div {
     width: 60px;
     height: 60px;
     border-radius: 8px;
-    background: var(--White, #FFFFFE);
+    background: var(--White);
     text-align: center;
     align-content: center;
 }
 .category-card:hover {
     border-radius: 8px;
-    background: var(--Blue, #6246EA);
-    color: #FFFFFE;
+    background: var(--Blue);
+    color: var(--White);
     box-shadow: 4px 6px 13px 0 rgba(113, 113, 113, 0.25);
 }
-/*------------------- Main ----------------------*/
+/*------------------------------ Main ---------------------------------*/
 main>div>section {
     display: flex;
     min-height: 490px;
@@ -270,10 +274,15 @@ main .artCard {
     justify-content: space-between;
     align-items: flex-start;
     border-radius: 12px;
-    background: var(--White, #FFFFFE);
+    background: var(--White);
+    transition: 1s;
 }
 main .artCard:hover {
     box-shadow: 4px 6px 13px 0 rgba(215, 215, 215, 0.25);
+    border-radius: 12px;
+    background: var(--White, #FFFFFE);
+    transition: 1s;
+    transform: scale(0.98);
 }
 main .author-info {
     display: flex;
@@ -282,7 +291,6 @@ main .author-info {
     gap: 15px;
 }
 main .article-cards h4 {
-    text-transform: capitalize;
     padding-top: 25px;
 }
 .author-info>div {
@@ -292,12 +300,12 @@ main .article-cards h4 {
     gap: 4px;
 }
 .author-info>div>p {
-    color: var(--Black, #2B2C34);
+    color: var(--Black);
     font-size: 16px;
     font-weight: 600;
 }
 .author-info>div>p:last-child {
-    color: var(--Black, #2B2C34);
+    color: var(--Black);
     width: 184px;
     height: 21px;
     font-size: 14px;
@@ -311,8 +319,8 @@ main .article-cards h4 {
     font-weight: 900;
     font-size: 20px;
 }
-/*------------------- Aside ----------------------*/
-aside {
+/*--------------------------- Aside -- Subscribe To Newsletter----------------------*/
+aside.subscribe {
     display: flex;
     padding: 58px 0;
     flex-direction: column;
@@ -320,11 +328,11 @@ aside {
     gap: 30px;
     min-height: 453px;
 }
-aside p {
-    color: var(--Grey, #C0C0C0);
+aside.subscribe p {
+    color: var(--Grey);
     text-align: center;
 }
-aside>div {
+aside.subscribe div {
     height: 105px;
     display: flex;
     flex-direction: column;
@@ -332,14 +340,13 @@ aside>div {
     align-items: center;
     gap: 10px;
 }
-/*-------------------- Footer --------------------*/
+/*--------------------------------- Footer ----------------------------*/
 footer {
     min-height: 435px;
     background: var(--Light-Grey-2);
 }
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
     gap: 160px;
     padding: 70px 0 50px 0;
@@ -356,12 +363,12 @@ footer h4 {
     gap: 20px;
 }
 footer p, li {
-    color: var(--Black, #2B2C34);
+    color: var(--Black);
     font-size: 18px;
 }
 .footer-copyright p {
     padding: 26px 0;
-    border-top: 1px solid #C0C0C0;
+    border-top: 1px solid var(--Grey);
     font-size: 14px;
 }
 .footer-icons {
@@ -377,7 +384,6 @@ footer p, li {
 .footer-info {
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
     gap: 95px;
 }
 .footer-info-card h4 {
